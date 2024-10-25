@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+	useJUnitPlatform()
+}
+
+dependencies {
+   // testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.6.2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.6.2'
+
+
+    implementation project(":DSE_MessageFramework")
+
+    implementation group: 'org.slf4j', name:'slf4j-api', version: '1.7.30'
+    implementation group: 'ch.qos.logback', name:'logback-classic', version: '1.2.3'
+    implementation group: 'ch.qos.logback', name:'logback-core', version: '1.2.3'
+
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'org.json:json:20201115'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'main.Main'
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

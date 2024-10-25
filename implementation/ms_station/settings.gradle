@@ -1,0 +1,5 @@
+include ":DSE_MessageFramework"
+project(":DSE_MessageFramework").projectDir = file("../mf")
+rootProject.name = 'ms_station'
+
+

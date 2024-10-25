@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3 class="mb-3">Current occupation of all hubs</h3>
+      <hr>
+      <ng-container *ngFor = "let hub  of hubs">
+        <h6>{{hub?.hubId}} - {{hub?.fillingLevel*100 | number}}%</h6>
+        <hr>
+      </ng-container>
+    </div>
+    <div class="col-sm">
+      <h3>Current occupation of specific hub</h3>
+      <form>
+        <div class="form-group">
+          <label for="idInput">Please enter UUID of desired hub</label>
+          <input type="text" class="form-control" id="idInput" placeholder="Enter UUID" [formControl]="selectedHubInput">
+          <button (click)="onClick()" type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+      </form>
+      <hr>
+      <h3>Hub: {{selectedHub?.hubId}}</h3>
+      <h3>Filling Level: {{selectedHub?.fillingLevel*100 | number}}%</h3>
+    </div>
+  </div>
+</div>
+

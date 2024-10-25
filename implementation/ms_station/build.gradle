@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id "org.springframework.boot" version "2.3.5.RELEASE"
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'main.MainController'
+    }
+    archiveClassifier = "all"
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+dependencies {
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '2.4.1'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.1'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.4.1'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    implementation 'org.json:json:20201115'
+    implementation project(":DSE_MessageFramework")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3 class="mb-3">Current container states</h3>
+      <hr>
+      <ng-container *ngFor="let container  of singleContainerHistories">
+        <h6> Container ID: {{container?.containerId}}</h6>
+        <h6 [ngStyle]="{'color':getColorOf(container?.locationId)}"> Location
+          ID: {{container?.locationId}}</h6>
+        <hr>
+      </ng-container>
+    </div>
+    <div class="col-sm">
+      <h3>Current Location History of Container</h3>
+      <form>
+        <div class="form-group">
+          <label for="idInput">Please enter UUID of desired container</label>
+          <input type="text" class="form-control" id="idInput" placeholder="Enter UUID"
+                 [formControl]="selectedContainerInput">
+          <button (click)="onClick()" type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+      </form>
+      <hr>
+      <h6>Container ID: {{multiContainerHistory?.containerId}}</h6>
+      <ng-container *ngFor="let location of multiContainerHistory?.visitedLocation">
+        <h6 [ngStyle]="{'color':getColorOf(location)}">Location ID: {{location}}</h6>
+      </ng-container>
+    </div>
+  </div>
+</div>

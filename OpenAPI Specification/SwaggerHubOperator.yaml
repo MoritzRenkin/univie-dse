@@ -1,0 +1,212 @@
+openapi: 3.0.1
+info:
+  title: Hub Operator
+  description: An API for accessing the hub operator information like the hub occupation, the location of the containers and the history of all locations of a containers
+  version: 1.0.0
+
+tags:
+- name: hub-operator
+
+paths:
+  /hub/occupation/:
+    get:
+      tags:
+        - hub-operator
+      summary: Returns a list of all hubs and their occupation
+      description: Returns a list of all hubs (their ID) and their occupation in percent
+      operationId: getHubOccupation
+
+      responses:
+        '200':
+          description: All hubs and their occupation
+          content:
+            application/json:
+
+              schema:
+                type: array
+                items:
+                  properties:
+                    hub:
+                      type: string
+                      example: 'c7c7482d-da86-44ec-ad35-713236251319'
+                    occupation:
+                      type: number
+                      example: 0.2
+        '404':
+          description: A hub-operator node was not found
+        '500':
+          description: Internal server error
+  /hub/occupation/{uuid}:
+    get:
+      tags:
+        - hub-operator
+      summary: Returns a hub and their occupation
+      description: Returns a hub (their ID) and their occupation in percent
+      operationId: getHubOccupationById
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The user UUID of the requested hub
+      responses:
+        '200':
+          description: All hubs and their occupation
+          content:
+            application/json:
+
+              schema:
+                type: array
+                items:
+                  properties:
+                    hub:
+                      type: string
+                      example: 'c7c7482d-da86-44ec-ad35-713236251319'
+                    occupation:
+                      type: number
+                      example: 0.2
+        '404':
+          description: A hub-operator node was not found
+        '500':
+          description: Internal server error
+
+  /container/location:
+    get:
+      tags:
+        - hub-operator
+      summary: Returns a list of all containers and their current location
+      description: Returns a list of all containers (their ID) and their current location including during transport
+      operationId: getContainerLocations
+
+      responses:
+        '200':
+            description: All containers and their current location
+            content:
+              application/json:
+
+                schema:
+                  type: array
+                  items:
+                    properties:
+                      container:
+                        type: string
+                        example: '8a36d158-e545-404b-986f-1f752d173f08'
+                      currentLocation:
+                        type: string
+                        example: 'c7c7482d-da86-44ec-ad35-713236251319'
+                      distanceToGo:
+                        type: number
+                        example: 2
+        '404':
+            description: A hub-operator node was not found
+        '500':
+            description: Internal server error
+  
+  /container/location/{uuid}:
+    get:
+      tags:
+        - hub-operator
+      summary: Returns the specified container and their current location
+      description: Returns the container (their ID) and their current location including during transport
+      operationId: getContainerLocationsById
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The user UUID of the requested container
+      responses:
+        '200':
+            description: All containers and their current location
+            content:
+              application/json:
+
+                schema:
+                  type: array
+                  items:
+                    properties:
+                      container:
+                        type: string
+                        example: '8a36d158-e545-404b-986f-1f752d173f08'
+                      currentLocation:
+                        type: string
+                        example: 'c7c7482d-da86-44ec-ad35-713236251319'
+                      distanceToGo:
+                        type: number
+                        example: 2
+        '404':
+            description: A hub-operator node was not found
+        '500':
+            description: Internal server error
+
+  /container/history:
+    get:
+      tags:
+        - hub-operator
+      summary: Returns a list of all containers and their location history
+      description: Returns a list of all containers (their ID) and their  location history
+      operationId: getContainerLocationHistory
+    
+      responses:
+        '200':
+          description: All containers and their location history
+          content:
+            application/json:
+
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    container:
+                      type: string
+                      example: '8a36d158-e545-404b-986f-1f752d173f08'
+                    locationHistory:
+                      type: array
+                      items:
+                        type: string
+                        example: 'c7c7482d-da86-44ec-ad35-713236251319'
+        '404':
+          description: A hub-operator node was not found
+        '500':
+          description: Internal server error
+
+  /container/history/{uuid}:
+    get:
+      tags:
+        - hub-operator
+      summary: Returns a container and their location history
+      description: Returns a containers (their ID) and their location history
+      operationId: getContainerLocationHistoryById
+      parameters:
+        - in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The user UUID of the requested container
+      responses:
+        '200':
+          description: All containers and their location history
+          content:
+            application/json:
+
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    container:
+                      type: string
+                      example: '8a36d158-e545-404b-986f-1f752d173f08'
+                    locationHistory:
+                      type: array
+                      items:
+                        type: string
+                        example: 'c7c7482d-da86-44ec-ad35-713236251319'
+        '404':
+          description: A hub-operator node was not found
+        '500':
+          description: Internal server error

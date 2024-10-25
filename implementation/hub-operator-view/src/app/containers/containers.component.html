@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3 class="mb-3">Current container states</h3>
+      <hr>
+      <ng-container *ngFor="let container  of containers">
+        <h6> Container ID: {{container?.containerId}}</h6>
+        <h6 [ngStyle]="{'color':getColorOf(container?.currentLocation)}"> Location ID: {{container?.currentLocation}}</h6>
+        <h6>Distance To Go: {{container?.distanceToGo}}</h6>
+        <hr>
+      </ng-container>
+    </div>
+    <div class="col-sm">
+      <h3>Current Location of Container</h3>
+      <form>
+        <div class="form-group">
+          <label for="idInput">Please enter UUID of desired container</label>
+          <input type="text" class="form-control" id="idInput" placeholder="Enter UUID"
+                 [formControl]="selectedContainerInput">
+          <button (click)="onClick()" type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+      </form>
+      <hr>
+      <h6>Container ID: {{selectedContainer?.containerId}}</h6>
+      <h6 [ngStyle]="{'color':getColorOf(selectedContainer?.currentLocation)}">Location
+        ID: {{selectedContainer?.currentLocation}}</h6>
+      <h6>Distance To Go: {{selectedContainer?.distanceToGo | number}}</h6>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,567 @@
+{
+  "61297ae3-b7bf-474a-b839-7256d63b06c6": {
+    "nodeType": "hub",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9101,
+    "capacity": 5000,
+    "staticNeighbours": [
+      {
+        "uuid": "5f4bcdd9-a857-4501-a479-8d511aba1dc5",
+        "nodeType": "hub_operator"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub",
+        "distance": 7
+      },
+      {
+        "uuid": "1f805130-4db8-4523-b4af-8a3a0bf9f6c9",
+        "nodeType": "station",
+        "distance": 4
+      },
+      {
+        "uuid": "f7dec03a-b120-46dc-b919-db7d3432fe92",
+        "nodeType": "station",
+        "distance": 5
+      },
+      {
+        "uuid": "627187b2-89ea-44f8-b45c-0ffc3b319736",
+        "nodeType": "station",
+        "distance": 3
+      },
+      {
+        "uuid": "38d10f47-8d89-4740-93c8-07408744ad87",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "e9486be9-bbf8-4a72-a026-25b852adddc9",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "1edc91e8-eda8-4ccd-95e3-c1d9e6076c3f",
+        "nodeType": "vehicle"
+      }
+    ],
+    "comment": "Hub ID: 1"
+  },
+  "fbe0539e-c16c-4472-b78b-30c9009726d3": {
+    "nodeType": "hub",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9102,
+    "capacity": 5000,
+    "staticNeighbours": [
+      {
+        "uuid": "5f4bcdd9-a857-4501-a479-8d511aba1dc5",
+        "nodeType": "hub_operator"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub",
+        "distance": 10
+      },
+      {
+        "uuid": "bd5def25-11d6-417d-a434-1b8d9c219cb8",
+        "nodeType": "station",
+        "distance": 4
+      },
+      {
+        "uuid": "c8fbb817-29e3-48ca-9c3d-0d6bbab6bcd3",
+        "nodeType": "station",
+        "distance": 6
+      },
+      {
+        "uuid": "627187b2-89ea-44f8-b45c-0ffc3b319736",
+        "nodeType": "station",
+        "distance": 7
+      },
+      {
+        "uuid": "727754e0-df2d-4b9d-b603-2f3c80de7023",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "77abac9b-4ae3-472c-9150-d8be045061f7",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "d1191654-e742-48b3-a870-4377e13a69a8",
+        "nodeType": "vehicle"
+      }
+    ],
+    "comment": "Hub ID: 2"
+  },
+  "5f1822ca-8408-44b0-9ece-c397c73b1be2": {
+    "nodeType": "hub",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9103,
+    "capacity": 5000,
+    "staticNeighbours": [
+      {
+        "uuid": "5f4bcdd9-a857-4501-a479-8d511aba1dc5",
+        "nodeType": "hub_operator"
+      },
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub",
+        "distance": 7
+      },
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub",
+        "distance": 10
+      },
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub",
+        "distance": 12
+      },
+      {
+        "uuid": "087434f5-1c58-493d-80da-0811f1280e17",
+        "nodeType": "station",
+        "distance": 2
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "station",
+        "distance": 2
+      },
+      {
+        "uuid": "4861e096-7d37-419a-9119-abc753768d20",
+        "nodeType": "station",
+        "distance": 2
+      },
+      {
+        "uuid": "54b3a4a0-ef89-44f0-ac0c-f1f317bc3598",
+        "nodeType": "station",
+        "distance": 3
+      },
+      {
+        "uuid": "c8fbb817-29e3-48ca-9c3d-0d6bbab6bcd3",
+        "nodeType": "station",
+        "distance": 7
+      },
+      {
+        "uuid": "33a92769-b3fa-4a87-b9ee-b47a2ff4bac1",
+        "nodeType": "station",
+        "distance": 10
+      },
+      {
+        "uuid": "18fffe24-9495-4141-a387-0dc4833e2886",
+        "nodeType": "station",
+        "distance": 16
+      },
+      {
+        "uuid": "2eec21d5-a756-4f79-b539-3f744166e917",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "74277cb9-721e-4d97-8c49-3d592b9f9dfd",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "3d401fe7-2735-4989-8b2a-ab00b77dbd00",
+        "nodeType": "vehicle"
+      }
+    ],
+    "comment": "Hub ID: 3"
+  },
+  "3346ced8-c994-4df2-b43d-c1497c20fa86": {
+    "nodeType": "hub",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9104,
+    "capacity": 5000,
+    "staticNeighbours": [
+      {
+        "uuid": "5f4bcdd9-a857-4501-a479-8d511aba1dc5",
+        "nodeType": "hub_operator"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub",
+        "distance": 12
+      },
+      {
+        "uuid": "769ccd0f-c749-4ad9-a275-7dd1b44960c1",
+        "nodeType": "station",
+        "distance": 7
+      },
+      {
+        "uuid": "33a92769-b3fa-4a87-b9ee-b47a2ff4bac1",
+        "nodeType": "station",
+        "distance": 8
+      },
+      {
+        "uuid": "18fffe24-9495-4141-a387-0dc4833e2886",
+        "nodeType": "station",
+        "distance": 16
+      },
+      {
+        "uuid": "c0839aa0-6f40-4274-b2ad-16e702f265f6",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "17760256-aae3-4f4a-843a-986c94dddbb1",
+        "nodeType": "vehicle"
+      },
+      {
+        "uuid": "b0c1ffc1-aa5a-481e-a7fa-cb7faa09bdb0",
+        "nodeType": "vehicle"
+      }
+    ],
+    "comment": "Hub ID: 4"
+  },
+  "1f805130-4db8-4523-b4af-8a3a0bf9f6c9": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9002,
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 1"
+  },
+  "f7dec03a-b120-46dc-b919-db7d3432fe92": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9003,
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 2"
+  },
+  "627187b2-89ea-44f8-b45c-0ffc3b319736": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9004,
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 3"
+  },
+  "bd5def25-11d6-417d-a434-1b8d9c219cb8": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9005,
+    "staticNeighbours": [
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 4"
+  },
+  "c8fbb817-29e3-48ca-9c3d-0d6bbab6bcd3": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9006,
+    "staticNeighbours": [
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 5"
+  },
+  "087434f5-1c58-493d-80da-0811f1280e17": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9007,
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 6"
+  },
+  "4861e096-7d37-419a-9119-abc753768d20": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9008,
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 7"
+  },
+  "54b3a4a0-ef89-44f0-ac0c-f1f317bc3598": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9009,
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 8"
+  },
+  "769ccd0f-c749-4ad9-a275-7dd1b44960c1": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9010,
+    "staticNeighbours": [
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 9"
+  },
+  "33a92769-b3fa-4a87-b9ee-b47a2ff4bac1": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9011,
+    "staticNeighbours": [
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 10"
+  },
+  "18fffe24-9495-4141-a387-0dc4833e2886": {
+    "nodeType": "station",
+    "bridgingActivated": true,
+    "ip": "10.101.104.13",
+    "port": 9012,
+    "staticNeighbours": [
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Station ID: 11"
+  },
+  "38d10f47-8d89-4740-93c8-07408744ad87": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9001,
+    "vehicleType": "BIKE",
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 1"
+  },
+  "e9486be9-bbf8-4a72-a026-25b852adddc9": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9002,
+    "vehicleType": "CAR",
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 2"
+  },
+  "1edc91e8-eda8-4ccd-95e3-c1d9e6076c3f": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9003,
+    "vehicleType": "CAR",
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 3"
+  },
+  "727754e0-df2d-4b9d-b603-2f3c80de7023": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9004,
+    "vehicleType": "ROBOT",
+    "staticNeighbours": [
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 4"
+  },
+  "77abac9b-4ae3-472c-9150-d8be045061f7": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9005,
+    "vehicleType": "CAR",
+    "staticNeighbours": [
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 5"
+  },
+  "d1191654-e742-48b3-a870-4377e13a69a8": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9006,
+    "vehicleType": "VAN",
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 6"
+  },
+  "2eec21d5-a756-4f79-b539-3f744166e917": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9007,
+    "vehicleType": "ROBOT",
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 7"
+  },
+  "74277cb9-721e-4d97-8c49-3d592b9f9dfd": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9008,
+    "vehicleType": "BIKE",
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 8"
+  },
+  "3d401fe7-2735-4989-8b2a-ab00b77dbd00": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9009,
+    "vehicleType": "BIKE",
+    "staticNeighbours": [
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 9"
+  },
+  "c0839aa0-6f40-4274-b2ad-16e702f265f6": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9010,
+    "vehicleType": "BIKE",
+    "staticNeighbours": [
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 10"
+  },
+  "17760256-aae3-4f4a-843a-986c94dddbb1": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9011,
+    "vehicleType": "CAR",
+    "staticNeighbours": [
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 11"
+  },
+  "b0c1ffc1-aa5a-481e-a7fa-cb7faa09bdb0": {
+    "nodeType": "vehicle",
+    "bridgingActivated": true,
+    "ip": "10.101.104.9",
+    "port": 9012,
+    "vehicleType": "VAN",
+    "staticNeighbours": [
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      }
+    ],
+    "comment": "Vehicle ID: 12"
+  },
+  "5f4bcdd9-a857-4501-a479-8d511aba1dc5": {
+    "nodeType": "hub_operator",
+    "bridgingActivated": false,
+    "ip": "10.101.104.13",
+    "port": 9001,
+    "staticNeighbours": [
+      {
+        "uuid": "61297ae3-b7bf-474a-b839-7256d63b06c6",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "fbe0539e-c16c-4472-b78b-30c9009726d3",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "5f1822ca-8408-44b0-9ece-c397c73b1be2",
+        "nodeType": "hub"
+      },
+      {
+        "uuid": "3346ced8-c994-4df2-b43d-c1497c20fa86",
+        "nodeType": "hub"
+      }
+    ]
+  }
+}

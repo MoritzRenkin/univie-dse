@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="d-flex justify-content-center">Destination {{selectedStation}}</h1>
+  <div class="btn-toolbar d-flex justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group" role="group" aria-label="First group">
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(1)">Station 1</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(2)">Station 2</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(3)">Station 3</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(4)">Station 4</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(5)">Station 5</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(6)">Station 6</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(7)">Station 7</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(8)">Station 8</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(9)">Station 9</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(10)">Station 10</button>
+      <button type="button" class="btn btn-secondary" (click)="onStationClick(11)">Station 11</button>
+    </div>
+  </div>
+  <div class="container ml-lg-5 mt-4">
+    <hr>
+    <ng-container *ngFor="let container  of containers">
+      <div class="row justify-content-center ml-4">
+        <div class="col">
+          <h6>Container ID: {{container?.id}}</h6>
+        </div>
+        <div class="col">
+          <h6>Location ID: {{container?.currentLocation}}</h6>
+        </div>
+        <div class="col">
+          <h6>Destination ID: {{container?.destinationLocation}}</h6>
+        </div>
+        <div class="col">
+          <h6>Weight: {{container?.weight}}</h6>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-secondary" (click)="onDeleteButtonClick(container)">Pickup</button>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+  </div>
+</div>
+
+

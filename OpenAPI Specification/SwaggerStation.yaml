@@ -1,0 +1,300 @@
+openapi: 3.0.1
+info:
+  title: Source/Destination
+  description: This is a service to perform various actions on a single Source/Destination node.
+  version: 1.0.0
+
+tags:
+- name: source
+  description: Operations on containers inserted into the Source (to be sent away)
+- name: destination
+  description: Operations on containers arrived at the destination and not yet been picked up.
+
+paths:
+  /source/{containerId}:
+    get:
+      tags:
+      - source
+      summary: Get a single containers in source node.
+      description: This operation returns a single container in the source node.
+      operationId: getSingleSourceContainer
+      parameters: 
+        - in: path
+          name: containerId
+          schema:
+            type: string
+          required: true
+          description: UUID of the container
+      
+      responses:
+        200:
+          description: The container specifics with the specified UUID.
+          content: 
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Container'
+        404:
+          description: Container not found.
+          
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  
+  /source/all-containers:
+    get:
+      tags:
+      - source
+      summary: Get all containers in source node.
+      description: This operation returns all containers in the source node. This can be used to see if they are being picked up.
+      operationId: getSourceContainers
+
+      responses:
+        200:
+          description: List of containers at the source
+          content: 
+            'application/json':
+              schema:
+                type: object
+                properties:
+                  countainersAmount:
+                    type: integer
+                    example: 1
+                  containers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        UUID:
+                          type: string
+                          example: 2b4684b0-e840-410f-b2ee-33f63084bf03
+                        source:
+                          type: string
+                          example: 93fbed0a-351d-4c0c-956c-9c61be38db2d
+                        destination:
+                          type: string
+                          example: 7f191dc6-ffe2-43de-8ab9-b183f9bc8049
+                        weight: 
+                          type: integer
+                          format: int32
+                          example: 20
+                        rest-link:
+                          type: string
+                          example: <url>/source/2b4684b0-e840-410f-b2ee-33f63084bf03
+        
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+                  
+        
+      
+  /source/insert:
+    post:
+      tags:
+      - source
+      summary: Insert single Container into the Source.
+      description: This operation inserts a single container into the Source. It will then be transported through the transport network to the specified destination.
+      operationId: createSingleContainer
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/ContainerInsertion'
+              
+                  
+              
+        required: true
+      responses:
+        201:
+          description: Successful operation
+        404:
+          description: A destination node was not found
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+
+
+  /source/insert/bulk:
+    post:
+      tags:
+      - source
+      summary: Insert bulk of containers.
+      description: This Operations inserts a specified number of containers at the source node in order to test the behaviour of the transport network.
+      operationId: createBulkContainers
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              type: object
+              properties:
+                containers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/ContainerInsertion'
+              description: UUID
+        required: true
+      responses:
+        201:
+          description: Successful operation
+        404:
+          description: A destination node was not found
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  
+  /destination/{containerId}:
+    get:
+      tags:
+      - destination
+      summary: Get a single containers in destination node.
+      description: This operation returns a single container in the destination node.
+      operationId: getSingleDestinationContainer
+      parameters: 
+        - in: path
+          name: containerId
+          schema:
+            type: string
+          required: true
+          description: UUID of the container
+      
+      responses:
+        200:
+          description: The container specifics with the specified UUID.
+          content: 
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Container'
+        404:
+          description: Container not found.
+          
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+      
+  /destination/all-containers:
+    get:
+      tags:
+      - destination
+      summary: Get containers in destination node
+      description: Get all containers which have been received at the destination node and are ready to be picked up (deleted).
+      operationId: getDestinationContainers
+      responses:
+        200:
+          description: All containers are returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  destination:
+                   type: string 
+                  containers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        UUID:
+                          type: string
+                          example: 2b4684b0-e840-410f-b2ee-33f63084bf03
+                        source:
+                          type: string
+                          example: 93fbed0a-351d-4c0c-956c-9c61be38db2d
+                        destination:
+                          type: string
+                          example: 7f191dc6-ffe2-43de-8ab9-b183f9bc8049
+                        weight: 
+                          type: integer
+                          format: int32
+                          example: 20
+                        rest-link:
+                          type: string
+                          example: <url>/destination/2b4684b0-e840-410f-b2ee-33f63084bf03
+                      
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+    
+  
+  /destination/pickup/{containerId}:
+    delete:
+      tags:
+      - destination
+      summary: Delete a container
+      description: Pickes up (deletes) a container from the destination node and returns the container properties. Container must be in the destination. Note, source and destination are logically seperated in this regard.
+      parameters: 
+        - in: path
+          name: containerId
+          schema:
+            type: string
+          required: true
+          description: UUID of the container
+      responses:
+        200:
+          $ref: '#/components/schemas/Container'
+              
+        404:
+          description: Container could not be found
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+      
+
+components:
+  schemas:
+    Container:
+      type: object
+      properties:
+        UUID:
+          type: string
+          example: 2b4684b0-e840-410f-b2ee-33f63084bf03
+        source:
+          type: string
+          example: 93fbed0a-351d-4c0c-956c-9c61be38db2d
+        destination:
+          type: string
+          example: 7f191dc6-ffe2-43de-8ab9-b183f9bc8049
+        weight: 
+          type: integer
+          format: int32
+          example: 20
+        
+    
+    ContainerInsertion:
+      type: object
+      properties:
+        destination:
+          type: string
+        weight: 
+          type: integer
+          format: int32
+          example: 20
+          
+    ErrorMessage:
+      type: object
+      properties:
+        error_message:
+          type: string
+          example: 'There was an error processing your request.'
+        
+
+         

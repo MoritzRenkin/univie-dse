@@ -1,0 +1,4 @@
+rootProject.name = 'ms_hub'
+
+include ":DSE_MessageFramework"
+project(":DSE_MessageFramework").projectDir = file("../mf")
